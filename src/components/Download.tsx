@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Download, FileText, FilePdf } from "lucide-react";
+import { Download, FileText, File } from "lucide-react";
 
 const DownloadSection = ({ 
   onDownloadClick, 
@@ -55,7 +55,7 @@ const DownloadSection = ({
             size="lg" 
             className="bg-[#0f172a] text-white hover:bg-[#1e293b] px-8 py-6 font-sora text-lg"
           >
-            <FilePdf className="mr-2 h-5 w-5" />
+            <File className="mr-2 h-5 w-5" />
             Download Roadmap
           </Button>
         </motion.div>
