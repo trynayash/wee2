@@ -19,9 +19,12 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: {
-    rollupOptions: {
-      external: ['file-saver'],
-    },
+  optimizeDeps: {
+    include: ['file-saver']
   },
+  build: {
+    commonjsOptions: {
+      include: [/file-saver/, /node_modules/]
+    }
+  }
 }));
