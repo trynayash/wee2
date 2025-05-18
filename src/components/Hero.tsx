@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { FileText } from "lucide-react";
 
 const Hero = ({ onDownloadClick }: { onDownloadClick: () => void }) => {
   return (
@@ -58,6 +59,7 @@ const Hero = ({ onDownloadClick }: { onDownloadClick: () => void }) => {
               size="lg" 
               className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white"
             >
+              <FileText className="mr-2 h-5 w-5" />
               Download PDF
             </Button>
 

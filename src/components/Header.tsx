@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { FileText } from "lucide-react";
 
 const Header = ({ onDownloadClick }: { onDownloadClick: () => void }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -43,6 +44,7 @@ const Header = ({ onDownloadClick }: { onDownloadClick: () => void }) => {
             onClick={onDownloadClick}
             className={`bg-[#2563eb] hover:bg-[#1d4ed8] transition-colors`}
           >
+            <FileText className="mr-2 h-4 w-4" />
             Download Case Study
           </Button>
         </motion.div>

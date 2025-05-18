@@ -16,7 +16,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   const [isDownloading, setIsDownloading] = useState(false);
 
-  const handleDownload = async () => {
+  const handleDownloadCaseStudy = async () => {
     if (isDownloading) return;
 
     setIsDownloading(true);
@@ -26,10 +26,38 @@ const Index = () => {
     });
 
     try {
-      await generatePDF();
+      await generatePDF('caseStudy');
       toast({
         title: "Download Started",
         description: "The case study PDF has been downloaded!",
+        variant: "default",
+      });
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+      toast({
+        title: "Download Failed",
+        description: "There was an error generating the PDF. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
+  const handleDownloadRoadmap = async () => {
+    if (isDownloading) return;
+
+    setIsDownloading(true);
+    toast({
+      title: "Preparing PDF",
+      description: "Please wait while we generate your roadmap PDF...",
+    });
+
+    try {
+      await generatePDF('roadmap');
+      toast({
+        title: "Download Started",
+        description: "The digital marketing roadmap PDF has been downloaded!",
         variant: "default",
       });
     } catch (error) {
@@ -72,15 +100,18 @@ const Index = () => {
 
   return (
     <div className="font-opensans text-gray-800">
-      <Header onDownloadClick={handleDownload} />
-      <Hero onDownloadClick={handleDownload} />
+      <Header onDownloadClick={handleDownloadCaseStudy} />
+      <Hero onDownloadClick={handleDownloadCaseStudy} />
       <Overview />
       <Objectives />
       <Strategy />
       <Results />
       <Takeaways />
       <Testimonial />
-      <DownloadSection onDownloadClick={handleDownload} />
+      <DownloadSection 
+        onDownloadClick={handleDownloadCaseStudy} 
+        onRoadmapClick={handleDownloadRoadmap} 
+      />
       <Footer />
     </div>
   );

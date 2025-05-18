@@ -90,9 +90,25 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 5,
   },
+  roadmapPhase: {
+    marginBottom: 20,
+    borderRadius: 5,
+    padding: 10,
+    backgroundColor: "#f1f5f9",
+  },
+  roadmapPhaseTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#2563eb",
+    marginBottom: 10,
+  },
+  bulletPoint: {
+    marginBottom: 5,
+    paddingLeft: 10,
+  },
 });
 
-// Create Document Component
+// Case Study PDF Component
 const CaseStudyPDF = () => (
   <Document>
     <Page size="A4" style={styles.page}>
@@ -276,9 +292,361 @@ const CaseStudyPDF = () => (
   </Document>
 );
 
-export const generatePDF = async () => {
-  const blob = await pdf(<CaseStudyPDF />).toBlob();
-  saveAs(blob, "WEE2-Instagram-Growth-Case-Study-Yash-Suthar.pdf");
+// Roadmap PDF Component
+const RoadmapPDF = () => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      {/* Cover Page */}
+      <View style={[styles.section, { marginTop: 100 }]}>
+        <Text style={[styles.header, { fontSize: 28 }]}>Digital Marketing Roadmap</Text>
+        <Text style={[styles.header, { marginTop: -10 }]}>For Social Media Growth</Text>
+        <Text style={[styles.text, { textAlign: "center", marginTop: 20, fontSize: 14 }]}>
+          A Strategic Framework for Building Brand Presence on Instagram
+        </Text>
+        <Text style={[styles.text, { textAlign: "center", marginTop: 40, fontSize: 14, fontWeight: "bold" }]}>
+          By Yash Suthar
+        </Text>
+        <Text style={[styles.text, { textAlign: "center", fontSize: 12 }]}>
+          Social Media Manager & Digital Marketing Specialist
+        </Text>
+      </View>
+
+      <View style={styles.footer}>
+        <Text>© 2025 Yash Suthar | capturewithyxsh@gmail.com | +91 9561713120</Text>
+      </View>
+    </Page>
+
+    <Page size="A4" style={styles.page}>
+      {/* Introduction */}
+      <View style={styles.section}>
+        <Text style={styles.header}>Introduction</Text>
+        <Text style={styles.text}>
+          This roadmap outlines a comprehensive strategy for growing a brand's Instagram presence and converting followers into leads. The approach is divided into four key phases, each building on the previous to create a sustainable system for social media growth and lead generation.
+        </Text>
+        
+        <Text style={[styles.subheader, { marginTop: 20 }]}>Who This Roadmap Is For</Text>
+        <Text style={styles.text}>
+          • PR and Digital Marketing agencies looking to grow their client base
+        </Text>
+        <Text style={styles.text}>
+          • Small to medium businesses wanting to establish social authority
+        </Text>
+        <Text style={styles.text}>
+          • Startups seeking to build brand awareness through social media
+        </Text>
+        <Text style={styles.text}>
+          • Marketing professionals looking to improve their social media strategies
+        </Text>
+      </View>
+
+      {/* Roadmap Phases */}
+      <View style={styles.section}>
+        <Text style={styles.subheader}>Roadmap Overview</Text>
+        <Text style={styles.text}>
+          The roadmap is structured in four progressive phases, each lasting approximately one month. Each phase focuses on specific goals while building on previous achievements.
+        </Text>
+      </View>
+      
+      <View style={styles.footer}>
+        <Text>© 2025 Yash Suthar | capturewithyxsh@gmail.com | +91 9561713120</Text>
+      </View>
+    </Page>
+
+    <Page size="A4" style={styles.page}>
+      {/* Phase 1 */}
+      <View style={styles.section}>
+        <Text style={styles.header}>Phase 1: Foundation & Brand Identity</Text>
+        
+        <View style={styles.roadmapPhase}>
+          <Text style={styles.roadmapPhaseTitle}>Month 1: Setting Up for Success</Text>
+          
+          <View style={styles.bulletPoint}>
+            <Text style={[styles.text, { fontWeight: "bold" }]}>Audience Research</Text>
+            <Text style={styles.text}>
+              • Conduct comprehensive audience analysis to identify demographics and interests
+            </Text>
+            <Text style={styles.text}>
+              • Research competitors and identify gaps in their social media strategy
+            </Text>
+            <Text style={styles.text}>
+              • Create audience personas to guide content creation
+            </Text>
+          </View>
+          
+          <View style={styles.bulletPoint}>
+            <Text style={[styles.text, { fontWeight: "bold" }]}>Visual Identity Development</Text>
+            <Text style={styles.text}>
+              • Create a consistent color palette and visual style for all posts
+            </Text>
+            <Text style={styles.text}>
+              • Develop post templates for different content categories
+            </Text>
+            <Text style={styles.text}>
+              • Design a profile layout with optimized bio and highlights
+            </Text>
+          </View>
+          
+          <View style={styles.bulletPoint}>
+            <Text style={[styles.text, { fontWeight: "bold" }]}>Content Strategy</Text>
+            <Text style={styles.text}>
+              • Establish content pillars (educational, promotional, behind-the-scenes)
+            </Text>
+            <Text style={styles.text}>
+              • Create a content calendar with 5 posts per week
+            </Text>
+            <Text style={styles.text}>
+              • Develop a hashtag strategy with branded and discovery tags
+            </Text>
+          </View>
+        </View>
+        
+        <Text style={[styles.text, { marginTop: 20, fontWeight: "bold" }]}>Key Deliverables:</Text>
+        <Text style={styles.text}>
+          • Brand style guide for Instagram
+        </Text>
+        <Text style={styles.text}>
+          • Content calendar for first month
+        </Text>
+        <Text style={styles.text}>
+          • Set of post templates
+        </Text>
+        <Text style={styles.text}>
+          • Hashtag strategy document
+        </Text>
+      </View>
+      
+      <View style={styles.footer}>
+        <Text>© 2025 Yash Suthar | capturewithyxsh@gmail.com | +91 9561713120</Text>
+      </View>
+    </Page>
+
+    <Page size="A4" style={styles.page}>
+      {/* Phase 2 */}
+      <View style={styles.section}>
+        <Text style={styles.header}>Phase 2: Engagement & Community Building</Text>
+        
+        <View style={styles.roadmapPhase}>
+          <Text style={styles.roadmapPhaseTitle}>Month 2: Building Relationships</Text>
+          
+          <View style={styles.bulletPoint}>
+            <Text style={[styles.text, { fontWeight: "bold" }]}>Engagement Strategy</Text>
+            <Text style={styles.text}>
+              • Implement daily engagement schedule (30 minutes per day)
+            </Text>
+            <Text style={styles.text}>
+              • Engage with industry hashtags and accounts
+            </Text>
+            <Text style={styles.text}>
+              • Respond to all comments and DMs within 3 hours
+            </Text>
+          </View>
+          
+          <View style={styles.bulletPoint}>
+            <Text style={[styles.text, { fontWeight: "bold" }]}>Content Optimization</Text>
+            <Text style={styles.text}>
+              • Analyze first month's content performance
+            </Text>
+            <Text style={styles.text}>
+              • Double down on high-performing content types
+            </Text>
+            <Text style={styles.text}>
+              • Experiment with posting times to identify optimal schedule
+            </Text>
+          </View>
+          
+          <View style={styles.bulletPoint}>
+            <Text style={[styles.text, { fontWeight: "bold" }]}>Story & Reel Integration</Text>
+            <Text style={styles.text}>
+              • Launch daily story series (tips, behind-the-scenes, Q&A)
+            </Text>
+            <Text style={styles.text}>
+              • Create 3 Reels per week using trending audio
+            </Text>
+            <Text style={styles.text}>
+              • Use interactive story stickers to boost engagement
+            </Text>
+          </View>
+        </View>
+        
+        <Text style={[styles.text, { marginTop: 20, fontWeight: "bold" }]}>Key Deliverables:</Text>
+        <Text style={styles.text}>
+          • Daily engagement tracker
+        </Text>
+        <Text style={styles.text}>
+          • Content performance report
+        </Text>
+        <Text style={styles.text}>
+          • Reels content strategy
+        </Text>
+        <Text style={styles.text}>
+          • Interactive story templates
+        </Text>
+      </View>
+      
+      <View style={styles.footer}>
+        <Text>© 2025 Yash Suthar | capturewithyxsh@gmail.com | +91 9561713120</Text>
+      </View>
+    </Page>
+
+    <Page size="A4" style={styles.page}>
+      {/* Phase 3 */}
+      <View style={styles.section}>
+        <Text style={styles.header}>Phase 3: Scaling & Paid Strategy</Text>
+        
+        <View style={styles.roadmapPhase}>
+          <Text style={styles.roadmapPhaseTitle}>Month 3: Accelerating Growth</Text>
+          
+          <View style={styles.bulletPoint}>
+            <Text style={[styles.text, { fontWeight: "bold" }]}>Paid Advertising</Text>
+            <Text style={styles.text}>
+              • Launch targeted Instagram ads with strategic CTA buttons
+            </Text>
+            <Text style={styles.text}>
+              • Create custom audiences based on website visitors and engagement
+            </Text>
+            <Text style={styles.text}>
+              • Test different ad formats (carousel, single image, video)
+            </Text>
+          </View>
+          
+          <View style={styles.bulletPoint}>
+            <Text style={[styles.text, { fontWeight: "bold" }]}>Collaborations</Text>
+            <Text style={styles.text}>
+              • Identify and reach out to potential collaboration partners
+            </Text>
+            <Text style={styles.text}>
+              • Organize Instagram Lives with industry influencers
+            </Text>
+            <Text style={styles.text}>
+              • Participate in engagement pods with complementary brands
+            </Text>
+          </View>
+          
+          <View style={styles.bulletPoint}>
+            <Text style={[styles.text, { fontWeight: "bold" }]}>Lead Magnet Creation</Text>
+            <Text style={styles.text}>
+              • Develop downloadable resources for lead generation
+            </Text>
+            <Text style={styles.text}>
+              • Create landing pages for Instagram traffic
+            </Text>
+            <Text style={styles.text}>
+              • Set up email nurture sequences for captured leads
+            </Text>
+          </View>
+        </View>
+        
+        <Text style={[styles.text, { marginTop: 20, fontWeight: "bold" }]}>Key Deliverables:</Text>
+        <Text style={styles.text}>
+          • Instagram ad campaign structure
+        </Text>
+        <Text style={styles.text}>
+          • Collaboration outreach template
+        </Text>
+        <Text style={styles.text}>
+          • Lead magnet resources
+        </Text>
+        <Text style={styles.text}>
+          • Landing page design
+        </Text>
+      </View>
+      
+      <View style={styles.footer}>
+        <Text>© 2025 Yash Suthar | capturewithyxsh@gmail.com | +91 9561713120</Text>
+      </View>
+    </Page>
+
+    <Page size="A4" style={styles.page}>
+      {/* Phase 4 */}
+      <View style={styles.section}>
+        <Text style={styles.header}>Phase 4: Analytics & Optimization</Text>
+        
+        <View style={styles.roadmapPhase}>
+          <Text style={styles.roadmapPhaseTitle}>Month 4: Refining the System</Text>
+          
+          <View style={styles.bulletPoint}>
+            <Text style={[styles.text, { fontWeight: "bold" }]}>Performance Analysis</Text>
+            <Text style={styles.text}>
+              • Conduct comprehensive review of 3-month performance
+            </Text>
+            <Text style={styles.text}>
+              • Analyze key metrics (reach, engagement, conversions)
+            </Text>
+            <Text style={styles.text}>
+              • Calculate ROI on paid campaigns
+            </Text>
+          </View>
+          
+          <View style={styles.bulletPoint}>
+            <Text style={[styles.text, { fontWeight: "bold" }]}>Strategy Refinement</Text>
+            <Text style={styles.text}>
+              • Adjust content mix based on performance data
+            </Text>
+            <Text style={styles.text}>
+              • Optimize ad targeting and creative elements
+            </Text>
+            <Text style={styles.text}>
+              • Refine lead capture and nurturing process
+            </Text>
+          </View>
+          
+          <View style={styles.bulletPoint}>
+            <Text style={[styles.text, { fontWeight: "bold" }]}>Automation & Scaling</Text>
+            <Text style={styles.text}>
+              • Implement tools for content scheduling and analytics
+            </Text>
+            <Text style={styles.text}>
+              • Create standard operating procedures for ongoing management
+            </Text>
+            <Text style={styles.text}>
+              • Develop a 6-month growth plan based on learnings
+            </Text>
+          </View>
+        </View>
+        
+        <Text style={[styles.text, { marginTop: 20, fontWeight: "bold" }]}>Key Deliverables:</Text>
+        <Text style={styles.text}>
+          • Comprehensive performance report
+        </Text>
+        <Text style={styles.text}>
+          • Optimized content and ad strategy
+        </Text>
+        <Text style={styles.text}>
+          • Social media SOP documentation
+        </Text>
+        <Text style={styles.text}>
+          • 6-month growth projection plan
+        </Text>
+      </View>
+      
+      {/* Contact Information */}
+      <View style={styles.contactInfo}>
+        <Text style={{ fontWeight: "bold", fontSize: 12, marginBottom: 5 }}>Yash Suthar</Text>
+        <Text>Social Media Manager & Digital Marketing Specialist</Text>
+        <Text>capturewithyxsh@gmail.com | +91 9561713120</Text>
+        <Text>LinkedIn: linkedin.com/in/yash-suthar-9834ba354/</Text>
+      </View>
+      
+      <View style={styles.footer}>
+        <Text>© 2025 Yash Suthar | All Rights Reserved</Text>
+      </View>
+    </Page>
+  </Document>
+);
+
+export const generatePDF = async (type = 'caseStudy') => {
+  let blob;
+  let filename;
+  
+  if (type === 'roadmap') {
+    blob = await pdf(<RoadmapPDF />).toBlob();
+    filename = "Digital-Marketing-Roadmap-Yash-Suthar.pdf";
+  } else {
+    blob = await pdf(<CaseStudyPDF />).toBlob();
+    filename = "WEE2-Instagram-Growth-Case-Study-Yash-Suthar.pdf";
+  }
+  
+  saveAs(blob, filename);
 };
 
 const PDFGenerator = () => {
